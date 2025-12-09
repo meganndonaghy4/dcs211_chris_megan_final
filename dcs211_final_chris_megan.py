@@ -49,6 +49,9 @@ data["RACE_P"] = data["RACE_P"].replace({1: "White", 2: "Black", 3: "Native Amer
 # gender to words: 1 = male, 2 = female, 3 = other 
 data["GENDER_P"] = data["GENDER_P"].replace({1: "Male", 2: "Female", 3: "Other"})
 
+# pet presence to 0-1: 1(Yes) = 1, 2(No) = 0 
+data["ANIMS"] = data["ANIMS"].replace({2: 0})
+
 # rank boroughs on price of rent, number of pets, cost of utilities
 borough_stats = ( 
     data.groupby('BORO')
@@ -143,7 +146,6 @@ plt.ylabel("Monthly Rent (USD)")
 plt.title("Age vs Monthly Rent")
 plt.show()
 
-
 # histograms to show borough characteristics 
 # pet ownership by borough  
 group = data.groupby("BORO")["ANIMS"].mean()
@@ -182,7 +184,6 @@ plt.title("Winter Utility Costs by Borough")
 plt.show()
 
 # lease length by borough 
-# correlations between borough and pet ownership? 
 group = data.groupby("BORO")["LEASE_LENGTH"].mean()
 group.plot(kind="bar")
 
@@ -192,7 +193,6 @@ plt.title("Lease Length by Borough")
 plt.show()
 
 # age by borough 
-# correlations between borough and pet ownership? 
 group = data.groupby("BORO")["AGE_REC_P"].mean()
 group.plot(kind="bar")
 
@@ -202,7 +202,6 @@ plt.title("Main Resident Age by Borough")
 plt.show()
 
 # household income by borough 
-# correlations between borough and pet ownership? 
 group = data.groupby("BORO")["HHINC_REC1"].mean()
 group.plot(kind="bar")
 
@@ -211,4 +210,131 @@ plt.ylabel("Household Income (USD)")
 plt.title("Household Income by Borough")
 plt.show()
 
+# histograms to show gender characteristics 
+# pet ownership by gender  
+group = data.groupby("GENDER_P")["ANIMS"].mean()
+group.plot(kind="bar")
 
+plt.xlabel("Gender")
+plt.ylabel("Pet Presence")
+plt.title("Pet Presence by Gender")
+plt.show()
+ 
+# rent by gender 
+group = data.groupby("GENDER_P")["RENT_AMOUNT"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Gender")
+plt.ylabel("Monthly Rent (USD)")
+plt.title("Average Rent by Gender")
+plt.show()
+
+# summer util by gender 
+group = data.groupby("GENDER_P")["UTILCOSTS_SUMMER"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Gender")
+plt.ylabel("Summer Utility Costs (USD)")
+plt.title("Summer Utility Costs by Gender")
+plt.show()
+
+# winter util by gender 
+group = data.groupby("GENDER_P")["UTILCOSTS_WINTER"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Gender")
+plt.ylabel("Winter Utility Costs (USD)")
+plt.title("Winter Utility Costs by Gender")
+plt.show()
+
+# lease length by gender
+group = data.groupby("GENDER_P")["LEASE_LENGTH"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Gender")
+plt.ylabel("Lease Length")
+plt.title("Lease Length by Gender")
+plt.show()
+
+# age by gender 
+group = data.groupby("GENDER_P")["AGE_REC_P"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Gender")
+plt.ylabel("Main Resident Age")
+plt.title("Main Resident Age by Gender")
+plt.show()
+
+# household income by gender 
+group = data.groupby("GENDER_P")["HHINC_REC1"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Gender")
+plt.ylabel("Household Income (USD)")
+plt.title("Household Income by Gender")
+plt.show()
+
+
+# histrograms to show race characteristics 
+# pet ownership by race  
+group = data.groupby("RACE_P")["ANIMS"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Race")
+plt.ylabel("Pet Presence")
+plt.title("Pet Presence by Race")
+plt.show()
+ 
+# rent by race 
+group = data.groupby("RACE_P")["RENT_AMOUNT"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Race")
+plt.ylabel("Monthly Rent (USD)")
+plt.title("Average Rent by Race")
+plt.show()
+
+# summer util by race 
+group = data.groupby("RACE_P")["UTILCOSTS_SUMMER"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Race")
+plt.ylabel("Summer Utility Costs (USD)")
+plt.title("Summer Utility Costs by Race")
+plt.show()
+
+# winter util by race 
+group = data.groupby("RACE_P")["UTILCOSTS_WINTER"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Race")
+plt.ylabel("Winter Utility Costs (USD)")
+plt.title("Winter Utility Costs by Race")
+plt.show()
+
+# lease length by race
+group = data.groupby("RACE_P")["LEASE_LENGTH"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Race")
+plt.ylabel("Lease Length")
+plt.title("Lease Length by Race")
+plt.show()
+
+# age by race
+group = data.groupby("RACE_P")["AGE_REC_P"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Race")
+plt.ylabel("Main Resident Age")
+plt.title("Main Resident Age by Race")
+plt.show()
+
+# household income by race 
+group = data.groupby("RACE_P")["HHINC_REC1"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Race")
+plt.ylabel("Household Income (USD)")
+plt.title("Household Income by Race")
+plt.show()

@@ -1,0 +1,32 @@
+{
+    "Manhattan": {
+        "mean_rent": 2688.315443592552,
+        "mean_pets": 0.25903614457831325,
+        "mean_utilwinter": 130.3274917853231,
+        "mean_utilsummer": 182.3450164293538
+    },
+    "Queens": {
+        "mean_rent": 1905.0104868913859,
+        "mean_pets": 0.2689138576779026,
+        "mean_utilwinter": 146.19850187265916,
+        "mean_utilsummer": 190.30262172284645
+    },
+    "Brooklyn": {
+        "mean_rent": 1818.3954778156997,
+        "mean_pets": 0.28668941979522183,
+        "mean_utilwinter": 157.79394197952217,
+        "mean_utilsummer": 193.43941979522185
+    },
+    "Staten Island": {
+        "mean_rent": 1745.087591240876,
+        "mean_pets": 0.39416058394160586,
+        "mean_utilwinter": 271.97080291970804,
+        "mean_utilsummer": 264.06569343065695
+    },
+    "Bronx": {
+        "mean_rent": 1434.0393955747436,
+        "mean_pets": 0.2930383162439288,
+        "mean_utilwinter": 144.45223961144092,
+        "mean_utilsummer": 215.39719373988126
+    }
+}

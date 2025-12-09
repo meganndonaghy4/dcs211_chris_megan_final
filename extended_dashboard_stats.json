@@ -1,0 +1,127 @@
+{
+    "Bronx": {
+        "mean_rent": 1434.0393955747436,
+        "mean_pets": 0.2930383162439288,
+        "mean_utilwinter": 144.45223961144092,
+        "mean_utilsummer": 215.39719373988126,
+        "mean_income": 60546.98758769563,
+        "mean_rating": 6.918510523475446,
+        "mean_rodents": 0.4657312466270912,
+        "mean_probs": 2.157582298974636,
+        "mean_lease": 2.9751753912574204,
+        "mean_age": 36.03130059363195,
+        "gender_distribution": {
+            "Female": 0.558553696708041,
+            "Male": 0.4409066378845116,
+            "Other": 0.0005396654074473826
+        },
+        "race_distribution": {
+            "Asian": 0.0372369131138694,
+            "Black": 0.5704263356718834,
+            "Native American": 0.0372369131138694,
+            "Pacific Islander": 0.008094981111710739,
+            "Two+ races": 0.022126281705342688,
+            "White": 0.3248785752833243
+        }
+    },
+    "Brooklyn": {
+        "mean_rent": 1818.3954778156997,
+        "mean_pets": 0.28668941979522183,
+        "mean_utilwinter": 157.79394197952217,
+        "mean_utilsummer": 193.43941979522185,
+        "mean_income": 118960.43003412969,
+        "mean_rating": 7.453498293515358,
+        "mean_rodents": 0.32380546075085326,
+        "mean_probs": 1.5294368600682593,
+        "mean_lease": 3.0081058020477816,
+        "mean_age": 38.85238907849829,
+        "gender_distribution": {
+            "Female": 0.5226109215017065,
+            "Male": 0.4714163822525597,
+            "Other": 0.005972696245733789
+        },
+        "race_distribution": {
+            "Asian": 0.12158703071672355,
+            "Black": 0.36177474402730375,
+            "Native American": 0.007679180887372013,
+            "Pacific Islander": 0.005119453924914676,
+            "Two+ races": 0.021331058020477817,
+            "White": 0.4825085324232082
+        }
+    },
+    "Manhattan": {
+        "mean_rent": 2688.315443592552,
+        "mean_pets": 0.25903614457831325,
+        "mean_utilwinter": 130.3274917853231,
+        "mean_utilsummer": 182.3450164293538,
+        "mean_income": 182314.47371303395,
+        "mean_rating": 7.648959474260679,
+        "mean_rodents": 0.24370208105147864,
+        "mean_probs": 1.4874041621029572,
+        "mean_lease": 2.8198247535596934,
+        "mean_age": 39.69934282584885,
+        "gender_distribution": {
+            "Female": 0.5443592552026287,
+            "Male": 0.452354874041621,
+            "Other": 0.0032858707557502738
+        },
+        "race_distribution": {
+            "Asian": 0.13855421686746988,
+            "Black": 0.19989047097480833,
+            "Native American": 0.01095290251916758,
+            "Pacific Islander": 0.0038335158817086527,
+            "Two+ races": 0.04107338444687842,
+            "White": 0.6056955093099672
+        }
+    },
+    "Queens": {
+        "mean_rent": 1905.0104868913859,
+        "mean_pets": 0.2689138576779026,
+        "mean_utilwinter": 146.19850187265916,
+        "mean_utilsummer": 190.30262172284645,
+        "mean_income": 118453.8254681648,
+        "mean_rating": 7.817228464419475,
+        "mean_rodents": 0.24194756554307117,
+        "mean_probs": 1.202247191011236,
+        "mean_lease": 2.7385767790262174,
+        "mean_age": 37.850936329588016,
+        "gender_distribution": {
+            "Female": 0.5101123595505618,
+            "Male": 0.4883895131086142,
+            "Other": 0.00149812734082397
+        },
+        "race_distribution": {
+            "Asian": 0.23295880149812734,
+            "Black": 0.14382022471910114,
+            "Native American": 0.03445692883895131,
+            "Pacific Islander": 0.012734082397003745,
+            "Two+ races": 0.07865168539325842,
+            "White": 0.49737827715355803
+        }
+    },
+    "Staten Island": {
+        "mean_rent": 1745.087591240876,
+        "mean_pets": 0.39416058394160586,
+        "mean_utilwinter": 271.97080291970804,
+        "mean_utilsummer": 264.06569343065695,
+        "mean_income": 117472.64963503649,
+        "mean_rating": 8.262773722627736,
+        "mean_rodents": 0.27007299270072993,
+        "mean_probs": 0.9416058394160584,
+        "mean_lease": 2.5036496350364965,
+        "mean_age": 39.56934306569343,
+        "gender_distribution": {
+            "Female": 0.5255474452554745,
+            "Male": 0.4744525547445255,
+            "Other": NaN
+        },
+        "race_distribution": {
+            "Asian": 0.0948905109489051,
+            "Black": 0.30656934306569344,
+            "Native American": NaN,
+            "Pacific Islander": NaN,
+            "Two+ races": 0.0364963503649635,
+            "White": 0.5620437956204379
+        }
+    }
+}

@@ -7,25 +7,6 @@ import plotly.express as px
 import folium
 from branca.colormap import linear
 
-"""
-This script reproduces the original data loading, cleaning and plotting
-steps from your project while adding the following features:
-
-* Saving bar charts as PNG files so they can be embedded in an HTML dashboard.
-* Correcting the "Brookyln" typo to "Brooklyn" when aggregating statistics.
-* Exporting aggregated borough statistics to a JSON file (`dashboard_stats.json`) for
-  use in the HTML page.  You can paste these values into the `boroughStats`
-  object or fetch the JSON dynamically.
-* Generating two interactive maps:
-    - A Plotly choropleth saved as `nyc_borough_choropleth.html`.
-    - A Folium choropleth with hover tooltips saved as `nyc_borough_folium.html`.
-
-The initial portion of the code (reading the CSV files, cleaning, and
-computing descriptive tables) is kept unchanged except for fixing the
-Brooklyn typo and saving figures to disk.  The additional code at
-the end performs the extra tasks necessary for the dashboard.
-"""
-
 
 # save occupied nychvs data as pandas data frame 
 occupied_data = pd.read_csv("dcs_occupied_puf_23.csv", engine='python', thousands=',')

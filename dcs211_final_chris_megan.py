@@ -121,16 +121,94 @@ for BORO, row in table_race.iterrows():
 
 print(table_four)
 
-# correlations between demographics and rent? 
+# scatterplots of empirical 
+# correlation between income and rent? 
+plt.scatter(data["HHINC_REC1"], data["RENT_AMOUNT"])
+plt.xlabel("Household Income (USD)")
+plt.ylabel("Monthly Rent (USD)")
+plt.title("Household Income vs Monthly Rent")
+plt.show()
 
-# correlations between demographics and lease time? 
+# correlation between rent and utility cost (summer)?  
+plt.scatter(data["RENT_AMOUNT"], data["UTILCOSTS_SUMMER"])
+plt.xlabel("Monthly Rent (USD)")
+plt.ylabel("Summer Utility Cost (USD)")
+plt.title("Monthly Rent vs Utility Costs")
+plt.show()
 
-# correlations between pet ownership and rent? 
+# correlation between age and rent? 
+plt.scatter(data["AGE_REC_P"], data["RENT_AMOUNT"])
+plt.xlabel("Age")
+plt.ylabel("Monthly Rent (USD)")
+plt.title("Age vs Monthly Rent")
+plt.show()
 
-# correlations between pet ownership and borough? 
 
-# correlations between pet ownsership and lease time? 
+# histograms to show borough characteristics 
+# pet ownership by borough  
+group = data.groupby("BORO")["ANIMS"].mean()
+group.plot(kind="bar")
 
+plt.xlabel("Borough")
+plt.ylabel("Pet Presence")
+plt.title("Pet Presence by Borough")
+plt.show()
+ 
+# rent by borough 
+group = data.groupby("BORO")["RENT_AMOUNT"].mean()
+group.plot(kind="bar")
 
+plt.xlabel("Borough")
+plt.ylabel("Monthly Rent (USD)")
+plt.title("Average Rent by Borough")
+plt.show()
+
+# summer util by borough 
+group = data.groupby("BORO")["UTILCOSTS_SUMMER"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Borough")
+plt.ylabel("Summer Utility Costs (USD)")
+plt.title("Summer Utility Costs by Borough")
+plt.show()
+
+# winter util by borough 
+group = data.groupby("BORO")["UTILCOSTS_WINTER"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Borough")
+plt.ylabel("Winter Utility Costs (USD)")
+plt.title("Winter Utility Costs by Borough")
+plt.show()
+
+# lease length by borough 
+# correlations between borough and pet ownership? 
+group = data.groupby("BORO")["LEASE_LENGTH"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Borough")
+plt.ylabel("Lease Length")
+plt.title("Lease Length by Borough")
+plt.show()
+
+# age by borough 
+# correlations between borough and pet ownership? 
+group = data.groupby("BORO")["AGE_REC_P"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Borough")
+plt.ylabel("Main Resident Age")
+plt.title("Main Resident Age by Borough")
+plt.show()
+
+# household income by borough 
+# correlations between borough and pet ownership? 
+group = data.groupby("BORO")["HHINC_REC1"].mean()
+group.plot(kind="bar")
+
+plt.xlabel("Borough")
+plt.ylabel("Household Income (USD)")
+plt.title("Household Income by Borough")
+plt.show()
 
 

@@ -44,6 +44,9 @@ data = data[data["LEASE_LENGTH"] != -1]
 data = data[data["GRENT"] != -2]
 data = data[data["GRENT"] != -3]
 data = data[data["GRENT"] != -1]
+data = data[data["HPROBCOUNT"] != -1]
+data = data[data["RODENTS_UNIT"] != -3]
+data = data[data["UNIT_RATING"] != -1]
 
 # boro to names: 1 = Bronx, 2 = Brooklyn, 3 = Manhattan, 4 = Queens, 5 = Staten Island
 # Note: fix the spelling of "Brookyln" to "Brooklyn" here.
@@ -57,6 +60,9 @@ data["GENDER_P"] = data["GENDER_P"].replace({1: "Male", 2: "Female", 3: "Other"}
 
 # pet presence to 0-1: 1(Yes) = 1, 2(No) = 0 
 data["ANIMS"] = data["ANIMS"].replace({2: 0})
+
+# rodent prescence to 0-1: 1(Yes) = 1, 2(No) = 0
+data["RODENTS_UNIT"] = data["RODENTS_UNIT"].replace({2: 0})
 
 # rank boroughs on price of rent, number of pets, cost of utilities
 borough_stats = ( 
@@ -104,6 +110,29 @@ for BORO, row in borough_demos.iterrows():
 
 print(table_two) 
 
+# apartment problems, rodents, and rating by borough 
+borough_other = ( 
+    data.groupby('BORO')
+    .agg(
+        mean_probs=('HPROBCOUNT', 'mean'),
+        mean_rodents=('RODENTS_UNIT', 'mean'),
+        mean_rating=('UNIT_RATING', 'mean')
+    )
+    .sort_values(by='mean_rating', ascending=False)
+)
+
+table_five = PrettyTable()
+table_five.field_names = ["Borough", "# Problems (mean)", "Rodent Presence (mean)", "Apartment Rating (mean)"]
+for BORO, row in borough_other.iterrows(): 
+    table_five.add_row([
+        BORO,
+        f"{row['mean_probs']:.2f}",
+        f"{row['mean_rodents']:.2f}",
+        f"{row['mean_rating']:.2f}"
+    ])
+
+print(table_five)
+
 # gender by borough  
 gender_count = (data.groupby(["BORO", "GENDER_P"]).size().reset_index(name="count")) # gender count per borough
 gender_count["total"] = gender_count.groupby("BORO")["count"].transform("sum") # sum of gender count per borough 
@@ -129,6 +158,7 @@ for BORO, row in table_race.iterrows():
     table_four.add_row([BORO] + [f"{v:.2f}" for v in row]) # list fraction for each value to second decimal 
 
 print(table_four)
+
 
 # scatterplots of empirical 
 # correlation between income and rent? 

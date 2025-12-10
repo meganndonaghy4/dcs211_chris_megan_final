@@ -186,7 +186,7 @@ save_bar(data.groupby("BORO")["LEASE_LENGTH"].mean(),"Borough","Lease Length",
 save_bar(data.groupby("BORO")["AGE_REC_P"].mean(),"Borough","Main Resident Age",
          "Main Resident Age by Borough","age_by_borough.png")
 
-# Extended stats using corrected names (data already has correct names)
+# Extended stats using names
 extended_stats = (data.groupby("BORO")
                   .agg(mean_rent=("RENT_AMOUNT","mean"),
                        mean_pets=("ANIMS","mean"),
